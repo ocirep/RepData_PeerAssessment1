@@ -24,6 +24,7 @@ barchart(steps~date,data_byday,scales=list(x=list(at=n_labels,labels=text_labels
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+
 Mean and median values are then easily calculated.
 
 ```r
@@ -124,6 +125,7 @@ xyplot(steps~interval|imputed,draw_data_byinterval,type='l',layout=c(1,2))
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+
 And finally, the 5-minute interval with the maximum number of steps remains the same.
 
 ```r

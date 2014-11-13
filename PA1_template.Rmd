@@ -27,6 +27,7 @@ n_labels<-seq(1,nrow(data_byday),5)
 text_labels<-data_byday$date[n_labels]
 barchart(steps~date,data_byday,scales=list(x=list(at=n_labels,labels=text_labels,rot=45,cex=0.8)),col='red')
 ```
+
 Mean and median values are then easily calculated.
 ```{r}
 mean(data_byday$steps)
@@ -83,6 +84,7 @@ corrected_data_byinterval<-aggregate(steps~interval,corrected_data,mean)
 draw_data_byinterval<-rbind(cbind(data_byinterval,imputed='original data'),cbind(corrected_data_byinterval,imputed='imputed data'))
 xyplot(steps~interval|imputed,draw_data_byinterval,type='l',layout=c(1,2))
 ```
+
 And finally, the 5-minute interval with the maximum number of steps remains the same.
 ```{r}
 corrected_data_byinterval[which.max(corrected_data_byinterval$steps),1]
